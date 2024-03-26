@@ -1,6 +1,6 @@
 # Confy
 
-A tool to synchronize nginx configuration filkes per-site from a user-accessible directory (likely tracked by git)
+A tool to synchronize NGINX configuration files per-site from a user-accessible directory (likely tracked by git)
 
 ## Requirements
 - modern debian based system such as Ubuntu 18.04^
