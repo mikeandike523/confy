@@ -1,0 +1,24 @@
+#!/bin/bash
+
+CONFY_DIR="$(dirname "$(realpath "$BASH_SOURCE[0]")")"
+
+# Function to check if Python 3 is installed
+check_python() {
+    if ! command -v python3 &> /dev/null; then
+        echo "Python 3 is not installed. Please install Python 3 to continue."
+        echo "On Ubuntu or Debian based systems, you can usually install Python 3 by running:"
+        echo "sudo apt-get update && sudo apt-get install python3"
+        echo "On other systems, please check your package manager or visit https://www.python.org/downloads/"
+        exit 1
+    fi
+}
+
+# Check if Python 3 is installed
+check_python
+
+# Idempotententy modify the bash profile or zsh profile to have the code "export PATH=..." in it to add confy dir to the path
+python3 "$CONFY_DIR/add-to-path.py" "$CONFY_DIR"
+
+echo Please open a new terminal to see updates to your bash/zsh PATH, or run
+echo "`source ~/.bashrc` or"
+echo "`source ~/.zshrc`"
