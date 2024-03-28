@@ -9,7 +9,6 @@ A tool to synchronize NGINX configuration files per-site from a user-accessible 
   `python3 -m pip install click`
 - bash available in /bin/bash
 
-
 nginx is not necessarily required to run confy, but the purpose of confy is for the management of nginx configurations
 
 ## Installation
@@ -33,11 +32,10 @@ nginx is not necessarily required to run confy, but the purpose of confy is for 
   `mkdir my-confy-project && cd my-confy-project && git init`
 
 - From INSIDE a given confy project
-- `sudo confy import`
-   Takes any existing configurations from the system and adds the files to the current project
-   The import process will also scan for symlinks to detect which sites in "sites-available" are active via symlinks to "sites-enabled"
+
 - `sudo confy sync`
-   Syncronizes all configurations back to the nginx configuration directories and manages which sites are enabled via symlinks 
+   Syncronizes all configurations back to the nginx configuration directories and manages which sites are enabled via symlinks
+   Copies "res" files to /etc/nginx/confy/res and sets permission (-R) of the folder to 444 (read only) 
 
 ## Tips
 

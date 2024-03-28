@@ -74,11 +74,9 @@ def sync():
             shutil.rmtree("/etc/nginx/confy/res")
         shutil.copytree(os.path.join(os.getcwd(),"res"),"/etc/nginx/confy/res")
 
-    run_chown_R("/etc/nginx/confy","www-data:www-data")
-    run_chmod_R("etc/nginx/confy","/etc/nginx/confy")
 
-    run_chown_R("/etc/nginx/confy/res","www-data:www-data")
-    run_chmod_R("etc/nginx/confy/res","/etc/nginx/confy")
+    run_chown_R("/etc/nginx/confy/res","root:root")
+    run_chmod_R("/etc/nginx/confy/res","444")
 
     Runner("sudo").run(["systemctl", "restart", "nginx"])
 
