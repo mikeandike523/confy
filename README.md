@@ -13,9 +13,15 @@ nginx is not necessarily required to run confy, but the purpose of confy is for 
 
 ## Installation
 - It is recommended to install confy to a folder in your home directory dedicated to the installation of portable software
-For example `~/portable`
--  Clone the repository, and run the configure script as root
-`mkdir -p ~/portable cd ~/portable && git clone https://www.github.com/mikeandike523/confy && cd confy && sudo chmod +x ./configure && sudo ./configure`
+```
+cd ~
+mkdir -p portable
+cd portable
+git clone https://www.github.com/mikeandike523/confy
+cd confy
+sudo chmod +x ./configure
+sudo ./configure
+```
 - This will create the appropriate symlink in /usr/local/bin making the `confy` command available on the command line
 - "confy" is installed as the current user, although some confy commands may require running as sudo
 
