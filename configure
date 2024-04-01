@@ -18,7 +18,7 @@ fi
 
 if [ ! -d "$CONFY_DIR/pyenv" ]; then
     echo "Creating Python virtual environment in $CONFY_DIR/pyenv"
-    "$CONFY_DIR/__python3" -m venv "$CONFY_DIR/pyenv"
+    python3 -m venv "$CONFY_DIR/pyenv"
 else
     echo "Python virtual environment already exists."
 fi

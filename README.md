@@ -17,6 +17,8 @@ nginx is not necessarily required to run confy, but the purpose of confy is for 
 cd ~
 mkdir -p portable
 cd portable
+# In case an older version of confy has already been installed
+rm -rf confy
 git clone https://www.github.com/mikeandike523/confy
 cd confy
 sudo chmod +x ./configure
