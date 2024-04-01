@@ -12,9 +12,10 @@ A tool to synchronize NGINX configuration files per-site from a user-accessible 
 nginx is not necessarily required to run confy, but the purpose of confy is for the management of nginx configurations
 
 ## Installation
+- Superuser priveleges are required
 - Install the software by curling the installation script and piping the bash
-- Warning! This form of installation, though widespread, carries risks and may be banned on certain systems
-- ``
+- Warning! This form of installation, though commonly used, carries risks and may be banned on certain systems
+- `sudo curl https://raw.githubusercontent.com/mikeandike523/confy/main/install.sh | bash`
 - This will create the appropriate symlink in /usr/local/bin making the `confy` command available on the command line
 - "confy" is installed as the current user, although some confy commands may require running as sudo
 
