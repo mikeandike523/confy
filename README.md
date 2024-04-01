@@ -12,8 +12,10 @@ A tool to synchronize NGINX configuration files per-site from a user-accessible 
 nginx is not necessarily required to run confy, but the purpose of confy is for the management of nginx configurations
 
 ## Installation
+- Ensure that modifying shell variable `LAST_PWD` is not detrimental.
 - It is recommended to install confy to a folder in your home directory dedicated to the installation of portable software
-```
+```bash
+LAST_PWD="$(pwd)"
 cd ~
 mkdir -p portable
 cd portable
@@ -23,6 +25,8 @@ git clone https://www.github.com/mikeandike523/confy
 cd confy
 sudo chmod +x ./configure
 sudo ./configure
+cd "$LAST_PWD"
+unset LAST_PWD
 ```
 - This will create the appropriate symlink in /usr/local/bin making the `confy` command available on the command line
 - "confy" is installed as the current user, although some confy commands may require running as sudo
