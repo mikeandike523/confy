@@ -12,14 +12,14 @@ A tool to synchronize NGINX configuration files per-site from a user-accessible 
 nginx is not necessarily required to run confy, but the purpose of confy is for the management of nginx configurations
 
 ## Installation
-- clone the repository
-  It is is recommended to clone this repository into a folder where you keep other portable cli-based tools
-  For example
-  `mkdir -p ~/software/portable`
-  `cd ~/software/protable && git clone https://www.github.com/mikeandike523/confy`
-- navigate to the installation directory
-- `chmod +x configure` (as user, not root)
-- `./configure` (as user, not root)
+- It is recommended to install confy to a folder in your home directory dedicated to the installation of portable software
+For example `~/portable`
+-  Clone the repository, and run the configure script as root
+`mkdir -p ~/portable cd ~/portable && git clone https://www.github.com/mikeandike523/confy && cd confy && sudo chmod +x ./configure && sudo ./configure`
+- This will create the appropriate symlink in /usr/local/bin making the `confy` command available on the command line
+- "confy" is installed as the current user, although some confy commands may require running as sudo
+
+
 
 ## Usage
 
