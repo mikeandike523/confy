@@ -37,7 +37,12 @@ if [ -L "/usr/local/bin/confy" ]; then
         echo "The symbolic link /usr/local/bin/confy already exists and points to the correct target."
     else
         echo "A symbolic link /usr/local/bin/confy already exists but points to a different target."
-        echo "Please manually check and update the link as necessary."
+        echo "Attempting to update the symbolic link..."
+        # Remove the existing link
+        sudo rm "/usr/local/bin/confy"
+        # Create the new link
+        sudo ln -s "$CONFY_DIR/confy" "/usr/local/bin/confy"
+        echo "The symbolic link /usr/local/bin/confy has been updated to point to the correct target."
     fi
 else
     # If the link does not exist, create it
