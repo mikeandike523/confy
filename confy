@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# broken by symlink from /usr/local/bin/confy --> /<confy installation folder>/confy help!
 CONFY_DIR="$(dirname "$(realpath "$BASH_SOURCE[0]")")"
 
 if [ "$CONFY_DIR" == "/usr/local/bin" ]; then
@@ -8,6 +7,4 @@ if [ "$CONFY_DIR" == "/usr/local/bin" ]; then
     CONFY_DIR="$(dirname "$CONFY_SCRIPT")"
 fi
 
-# however, the solution needs to be valid in the (rare) but valid case where p<confy installation folder>/confy is run directly
-
-"$CONFY_DIR/__python3" "$CONFY_DIR/confy.py" "$@"
+"$CONFY_DIR/__python" "$CONFY_DIR/confy.py" "$@"

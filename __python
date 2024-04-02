@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Get the directory of the script
+dn="$(dirname "$(realpath "$0")")"
+
+# Check the operating system
+if [[ "$OSTYPE" == "darwin"* || "$OSTYPE" == "linux-gnu" ]]; then
+    "$dn/pyenv/bin/python3" "$@"
+elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    "$dn/pyenv/Scripts/python.exe" "$@"
+else
+    echo "Unsupported operating system: $OSTYPE"
+    exit 1
+fi
