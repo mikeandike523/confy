@@ -1,5 +1,26 @@
-def le_cert(cert_name):
-    return f"""
-ssl_certificate "/etc/letsencrypt/live/{cert_name}/fullchain.pem";
-ssl_certificate_key "/etc/letsencrypt/live/{cert_name}/privkey.pem";
-"""
+import json
+
+
+
+
+def repeat(text, variable_name):
+
+    [A, B] = text.split("-- TEMPLATE --")
+    A = A.strip()
+    B = B.strip()
+    text = B
+    values = list(map(lambda x: x.strip(),A.splitlines()))
+    statements=[]
+
+    for value in values:
+        templated=text.replace(variable_name,value)
+
+        statements.append(templated)
+
+
+    return "\n\n".join(statements)
+
+
+handler_manifest = {
+    "repeat":repeat
+}
