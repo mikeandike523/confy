@@ -5,7 +5,9 @@ dn="$(dirname "$(realpath "$0")")"
 cd "$dn"
 
 python3 -m venv pyenv
+
 ./__python -m pip install -r requirements.txt
 
 sudo chmod +x ./confy
-sudo chmod +x update
+sudo chmod +x ./__python
+sudo chmod +x ./update
