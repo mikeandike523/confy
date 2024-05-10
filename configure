@@ -10,4 +10,3 @@ python3 -m venv pyenv
 
 sudo chmod +x ./confy
 sudo chmod +x ./__python
-sudo chmod +x ./update
