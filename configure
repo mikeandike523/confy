@@ -4,9 +4,13 @@ dn="$(dirname "$(realpath "$0")")"
 
 cd "$dn"
 
-python3 -m venv pyenv
-
-./__python -m pip install -r requirements.txt
-
 sudo chmod +x ./confy
 sudo chmod +x ./__python
+
+sudo python3 -m venv pyenv
+
+sudo ./__python -m pip install -r requirements.txt
+
+sudo rm -f /usr/local/bin/confy
+
+sudo ln -s /usr/local/src/confy/confy /usr/local/bin/confy
